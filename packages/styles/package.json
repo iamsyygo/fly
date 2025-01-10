@@ -1,0 +1,13 @@
+{
+  "name": "@spark/styles",
+  "version": "0.1.0",
+  "main": "dist/index.css",
+  "scripts": {
+    "build": "sass src/index.scss dist/index.css",
+    "lint": "stylelint \"src/**/*.scss\""
+  },
+  "devDependencies": {
+    "sass": "^1.0.0",
+    "stylelint": "^15.0.0"
+  }
+} 
