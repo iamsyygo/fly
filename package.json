@@ -2,10 +2,11 @@
   "name": "spark",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "pnpm -r build",
     "test": "pnpm -r test",
-    "lint": "pnpm -r lint"
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache"
   },
   "dependencies": {
     "@spark/internal-constant": "workspace:^",
@@ -16,8 +17,11 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@spark/internal-eslint": "workspace:^",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.10.5",
-    "@vue/test-utils": "^2.4.6"
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.17.0"
   }
 }
