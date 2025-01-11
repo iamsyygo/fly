@@ -2,8 +2,8 @@
   "name": "@spark/internal-lint",
   "version": "0.0.1",
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub"
+    "dev": "unbuild --stub",
+    "build": "unbuild"
   },
   "files": [
     "dist"

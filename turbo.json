@@ -1,15 +1,83 @@
 {
     "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": [".env*"],
     "tasks": {
       "build": {
+        "cache": true,
         "dependsOn": ["^build"],
-        "inputs": ["$TURBO_DEFAULT$", ".env*"],
-        "outputs": [".nuxt/**", ".output/**", "dist/**"]
+        "inputs": [
+          "packages/**/*.{vue,ts,js,scss}",
+          "internal/constant/**/*.ts",
+          "internal/utils/**/*.ts",
+          "internal/lint/**/*.ts",
+          "internal/build/**/*.ts",
+          "tsconfig.json",
+          "tsconfig.test.json",
+          "tsconfig.web.json",
+          "tsconfig.node.json",
+          "package.json",
+          "vite.config.*",
+          "vitest.config.*"
+        ],
+        "outputs": [
+          "internal/**/dist/**",
+          "dist/**"
+        ]
       },
-      "lint": {},
       "dev": {
         "cache": false,
         "persistent": true
+      },
+      "lint": {
+        "dependsOn": ["build:lint"],
+        "inputs": [
+          "packages/**/*.{vue,ts,js,scss}",
+          "internal/lint/**/*.ts",
+          "eslint.config.*",
+          "stylelint.config.*"
+        ],
+        "outputs": [
+          ".turbo/**"
+        ]
+      },
+      "lint:style": {
+        "dependsOn": ["build:lint"],
+        "outputs": [
+          ".turbo/**"
+        ]
+      },
+      "test": {
+        "dependsOn": ["build"],
+        "inputs": [
+          "packages/**/__tests__/**/*.{ts,js}",
+          "packages/**/*.{vue,ts,js}",
+          "vitest.config.*",
+          "tsconfig.test.json"
+        ],
+        "outputs": [
+          "coverage/**",
+          ".turbo/**"
+        ]
+      },
+      "test:watch": {
+        "cache": false,
+        "persistent": true
+      },
+      "clean": {
+        "cache": false
+      },
+      "typecheck": {
+        "dependsOn": ["build:constant", "build:utils"],
+        "inputs": [
+          "packages/**/*.{vue,ts,js}",
+          "tsconfig.*"
+        ],
+        "outputs": [
+          ".turbo/**"
+        ]
       }
     }
   }
+
+
+  
