@@ -20,7 +20,6 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
-
 export interface AvatarProps {
   size?: 'small' | 'default' | 'large' | number
   shape?: 'circle' | 'square'

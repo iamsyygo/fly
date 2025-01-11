@@ -1,14 +1,14 @@
+import { resolve } from 'path'
 import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import { target } from '@spark/internal-constant'
-import { packagesPath, rootPath } from '@spark/internal-utils'
 import vue from '@vitejs/plugin-vue'
 import jsx from '@vitejs/plugin-vue-jsx'
 import { glob } from 'fast-glob'
-import { resolve } from 'path'
 import { Plugin, rollup } from 'rollup'
 import del from 'rollup-plugin-delete'
 import esbuild from 'rollup-plugin-esbuild'
+import { packagesPath, rootPath } from '@spark/internal-utils'
+import { target } from '@spark/internal-constant'
 import { buildOptionsAssembly } from './module'
 const plugins: Plugin[] = [
   vue({
@@ -40,11 +40,11 @@ async function buildPackagesHandler() {
       absolute: true,
       onlyFiles: true,
       ignore: ['**/node_modules/**', '**/dist/**', '**/__tests__/**'],
-    }
+    },
   )
 
   const bundle = await rollup({
-    input: input,
+    input,
     plugins,
     external: ['vue'],
     treeshake: { moduleSideEffects: false },
@@ -61,9 +61,9 @@ async function buildPackagesHandler() {
   //   })
 
   await Promise.all(
-    buildOptionsAssembly.map(async ([format, options]) => {
+    buildOptionsAssembly.map(async ([_format, options]) => {
       await bundle.write(Object.assign({}, options))
-    })
+    }),
   )
 }
 

@@ -1,6 +1,6 @@
 import { resolve } from 'path'
-import type { ModuleFormat, OutputOptions } from 'rollup'
 import { distPath, packagesPath } from '@spark/internal-utils'
+import type { ModuleFormat, OutputOptions } from 'rollup'
 
 export const buildOptions: Partial<Record<ModuleFormat, OutputOptions>> = {
   es: {

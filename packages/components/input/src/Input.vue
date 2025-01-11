@@ -21,7 +21,7 @@ export interface InputProps {
   disabled?: boolean
 }
 
-const props = withDefaults(defineProps<InputProps>(), {
+withDefaults(defineProps<InputProps>(), {
   type: 'text',
   placeholder: '',
   disabled: false,

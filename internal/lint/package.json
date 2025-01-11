@@ -1,5 +1,5 @@
 {
-  "name": "@spark/internal-eslint",
+  "name": "@spark/internal-lint",
   "version": "0.0.1",
   "scripts": {
     "build": "unbuild",
@@ -14,20 +14,36 @@
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./eslint": {
+      "import": "./dist/eslint/index.mjs",
+      "require": "./dist/eslint/index.cjs"
+    },
+    "./stylelint": {
+      "import": "./dist/stylelint/index.mjs",
+      "require": "./dist/stylelint/index.cjs"
     }
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.17.0",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.19.1",
-    "eslint-define-config": "^2.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsonc": "^2.18.2",
+    "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.14.0",
     "jsonc-eslint-parser": "^2.4.0",
     "prettier": "^3.4.2",
+    "stylelint": "^16.12.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^6.0.4",
     "typescript": "^5.7.3",
-    "unbuild": "^3.2.0"
+    "unbuild": "^3.2.0",
+    "vue-eslint-parser": "^9.4.3"
   }
 }
