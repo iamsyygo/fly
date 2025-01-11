@@ -6,11 +6,14 @@
   "scripts": {
     "build": "pnpm -r build",
     "test": "pnpm -r test",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
-    "lint:style": "stylelint '**/*.{css,scss}'",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
+    "lint:style": "stylelint \"**/*.{vue,css,scss}\" --fix",
     "test:unit": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "prepare": "husky install",
+    "commit": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
     "@spark/internal-constant": "workspace:^",
@@ -22,6 +25,8 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-conventional": "^18.0.0",
     "@eslint/eslintrc": "^3.2.0",
     "@spark/internal-lint": "workspace:^",
     "@types/jsdom": "^21.1.7",
@@ -31,9 +36,28 @@
     "@vitest/coverage-v8": "^1.2.0",
     "@vitest/ui": "^1.2.0",
     "@vue/test-utils": "^2.4.6",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.17.0",
+    "husky": "^8.0.0",
     "jsdom": "^24.0.0",
+    "lint-staged": "^15.0.0",
     "stylelint": "^16.12.0",
     "vitest": "^1.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,vue}": [
+      "stylelint --fix"
+    ]
   }
 }
