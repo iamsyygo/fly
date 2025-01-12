@@ -1,0 +1,55 @@
+{
+  "name": "element-plus",
+  "version": "0.0.1",
+  "scripts": {},
+  "files": [
+    "dist",
+    "components",
+    "plugins",
+    "utils",
+    "styles"
+  ],
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/lib/index.js",
+      "import": "./dist/es/index.js"
+    },
+    "./es": {
+      "require": "./dist/es/index.js",
+      "import": "./dist/es/index.js"
+    },
+    "./lib": {
+      "require": "./dist/lib/index.js",
+      "import": "./dist/lib/index.js"
+    },
+    "./components": {
+      "require": "./dist/components/index.js",
+      "import": "./dist/components/index.js"
+    },
+    "./plugins": {
+      "require": "./dist/plugins/index.js",
+      "import": "./dist/plugins/index.js"
+    },
+    "./utils": {
+      "require": "./dist/utils/index.js",
+      "import": "./dist/utils/index.js"
+    }
+  },
+  "keywords": [
+    "spark",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamsyygo/spark.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

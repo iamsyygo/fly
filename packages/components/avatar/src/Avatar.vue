@@ -12,9 +12,6 @@
     <span v-else-if="$slots.default" class="spark-avatar__text">
       <slot />
     </span>
-    <span v-else class="spark-avatar__text">
-      {{ computedText }}
-    </span>
   </span>
 </template>
 

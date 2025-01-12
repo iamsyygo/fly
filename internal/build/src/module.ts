@@ -1,10 +1,11 @@
 import { resolve } from 'path'
-import { distPath, packagesPath } from '@spark/internal-utils'
+import { packagesDistPath, packagesPath } from '@spark/internal-utils'
+import { esmDir, libDir } from '@spark/internal-constant'
 import type { ModuleFormat, OutputOptions } from 'rollup'
 
 export const buildOptions: Partial<Record<ModuleFormat, OutputOptions>> = {
   es: {
-    dir: resolve(distPath, 'es'),
+    dir: resolve(packagesDistPath, esmDir),
     format: 'esm',
     preserveModules: true,
     preserveModulesRoot: packagesPath,
@@ -12,7 +13,7 @@ export const buildOptions: Partial<Record<ModuleFormat, OutputOptions>> = {
     sourcemap: true,
   },
   cjs: {
-    dir: resolve(distPath, 'lib'),
+    dir: resolve(packagesDistPath, libDir),
     format: 'cjs',
     preserveModules: true,
     preserveModulesRoot: packagesPath,

@@ -1,9 +1,11 @@
+import { readFile } from 'fs/promises'
 import { resolve } from 'path'
-import commonjs from '@rollup/plugin-commonjs'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
+import { existsSync } from 'fs'
 import vue from '@vitejs/plugin-vue'
 import jsx from '@vitejs/plugin-vue-jsx'
 import { glob } from 'fast-glob'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 import { Plugin, rollup } from 'rollup'
 import del from 'rollup-plugin-delete'
 import esbuild from 'rollup-plugin-esbuild'
@@ -32,7 +34,34 @@ const plugins: Plugin[] = [
   }),
 ]
 
+const getPackageDataPath = (path: string) => {
+  return resolve(path, 'package.json')
+}
+
 async function buildPackagesHandler() {
+  const externals: string[] = ['vue', '@vue/test-utils']
+
+  // 获取 packagesPath 下的第一个目录路径
+  const firstPackageSubDir = await glob('**', {
+    cwd: packagesPath,
+    absolute: true,
+    onlyFiles: false,
+    deep: 1,
+    ignore: ['**/node_modules/**', '**/dist/**', '**/__tests__/**'],
+  })
+
+  firstPackageSubDir.forEach(async (path) => {
+    const packageDataPath = getPackageDataPath(path)
+    // If file not exists, skip
+    if (!existsSync(packageDataPath)) return
+    const packageData = await readFile(packageDataPath, 'utf-8')
+    const { devDependencies = {}, dependencies = {} } = JSON.parse(packageData)
+    externals.push(
+      ...Object.keys(devDependencies),
+      ...Object.keys(dependencies),
+    )
+  })
+
   const input = await glob(
     ['**/*.{js,ts,vue}', '!**/style/(index|css).{js,ts,vue}'],
     {
@@ -46,19 +75,9 @@ async function buildPackagesHandler() {
   const bundle = await rollup({
     input,
     plugins,
-    external: ['vue'],
+    external: externals,
     treeshake: { moduleSideEffects: false },
   })
-
-  //   await bundle.write({
-  //     dir: resolve(rootPath, 'dist'),
-  //     format: 'esm',
-  //     exports: undefined,
-  //     preserveModules: true,
-  //     preserveModulesRoot: packagesPath,
-  //     entryFileNames: '[name].js',
-  //     sourcemap: true,
-  //   })
 
   await Promise.all(
     buildOptionsAssembly.map(async ([_format, options]) => {

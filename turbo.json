@@ -21,7 +21,7 @@
         ],
         "outputs": [
           "internal/**/dist/**",
-          "dist/**"
+          "packages/dist/**"
         ]
       },
       "dev": {

@@ -6,6 +6,7 @@ export const mount = <T extends Component>(
   component: T,
   options?: MountingOptions<any>,
 ) => {
+  // @ts-ignore
   return _mount(component, {
     ...options,
     // 可以在这里添加全局配置
