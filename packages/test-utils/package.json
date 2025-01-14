@@ -1,8 +1,11 @@
 {
   "name": "@spark/test-utils",
   "version": "0.1.0",
-  "scripts": {
-  },
+  "scripts": {},
   "devDependencies": {
+    "@vue/test-utils": "^2.4.6"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
   }
 }
