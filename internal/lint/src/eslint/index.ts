@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-nocheck
-import { FlatCompat } from '@eslint/eslintrc'
+// import { FlatCompat } from '@eslint/eslintrc'
 import eslintJs from '@eslint/js'
 import tseslint from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
@@ -20,9 +20,9 @@ import vueParser from 'vue-eslint-parser'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
+// const compat = new FlatCompat({
+//   baseDirectory: __dirname,
+// })
 
 const ignores = [
   '**/dist/**',
@@ -167,20 +167,20 @@ export default [
         },
       ],
       'no-restricted-imports': [
-      'error',
-      {
-        paths: [
-          { name: 'lodash', message: 'Use lodash-unified instead.' },
-          { name: 'lodash-es', message: 'Use lodash-unified instead.' },
-        ],
-        patterns: [
-          {
-            group: ['lodash/*', 'lodash-es/*'],
-            message: 'Use lodash-unified instead.',
-          },
-        ],
-      },
-    ],
+        'error',
+        {
+          paths: [
+            { name: 'lodash', message: 'Use lodash-unified instead.' },
+            { name: 'lodash-es', message: 'Use lodash-unified instead.' },
+          ],
+          patterns: [
+            {
+              group: ['lodash/*', 'lodash-es/*'],
+              message: 'Use lodash-unified instead.',
+            },
+          ],
+        },
+      ],
 
       // eslint-comments
       'eslint-comments/disable-enable-pair': [
@@ -212,8 +212,6 @@ export default [
   // Object.assign({}, tseslint.configs.recommended, {
   //   ignores,
   // }),
-
-  
 
   ...eslintPluginVue.configs['flat/essential'].map((config) =>
     Object.assign({}, config, { ignores }),

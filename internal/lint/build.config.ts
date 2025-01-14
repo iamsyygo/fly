@@ -2,10 +2,8 @@ import { defineBuildConfig } from 'unbuild'
 import { devDependencies } from './package.json'
 
 export default defineBuildConfig({
-  entries: ['./eslint/index.ts', './stylelint/index.ts', './index.ts'],
-  //   declaration: true,
+  entries: ['./src/eslint/index.ts', './src/stylelint/index.ts', './src/index.ts'],
   externals: Object.keys(devDependencies).concat(['eslint', 'path', 'url']),
-  // watch: true,
   rollup: {
     emitCJS: true,
   },
