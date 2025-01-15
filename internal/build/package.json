@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "tsx index.ts",
+    "clean": "rimraf dist",
     "build:packages": "pnpm run build"
   },
   "devDependencies": {
