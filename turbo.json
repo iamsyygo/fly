@@ -5,23 +5,10 @@
       "build": {
         "cache": true,
         "dependsOn": ["^build"],
-        "inputs": [
-          "packages/**/*.{vue,ts,js,scss}",
-          "internal/constant/**/*.ts",
-          "internal/utils/**/*.ts",
-          "internal/lint/**/*.ts",
-          "internal/build/**/*.ts",
-          "tsconfig.json",
-          "tsconfig.test.json",
-          "tsconfig.web.json",
-          "tsconfig.node.json",
-          "package.json",
-          "vite.config.*",
-          "vitest.config.*"
-        ],
         "outputs": [
           "internal/**/dist/**",
-          "packages/dist/**"
+          "packages/dist/**",
+          "dist/**"
         ]
       },
       "dev": {
