@@ -18,9 +18,15 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "test:unit": "vitest",
-    "tree": "tree -I 'node_modules|.git|.DS_Store|dist'"
+    "tree": "tree -I 'node_modules|.git|.DS_Store|dist'",
+    "version": "changeset version",
+    "version:pre": "changeset pre enter alpha",
+    "version:pre:exit": "changeset pre exit",
+    "publish": "pnpm build && changeset publish",
+    "release": "pnpm build && pnpm version && pnpm publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.11",
     "@commitlint/cli": "^18.0.0",
     "@commitlint/config-conventional": "^18.0.0",
     "@eslint/eslintrc": "^3.2.0",
