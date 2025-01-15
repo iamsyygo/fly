@@ -39,7 +39,7 @@ const getPackageDataPath = (path: string) => {
 }
 
 async function buildPackagesHandler() {
-  const externals: string[] = ['vue', '@vue/test-utils']
+  const externals = new Set<string>()
 
   // 获取 packagesPath 下的第一个目录路径
   const firstPackageSubDir = await glob('**', {
@@ -56,10 +56,11 @@ async function buildPackagesHandler() {
     if (!existsSync(packageDataPath)) return
     const packageData = await readFile(packageDataPath, 'utf-8')
     const { devDependencies = {}, dependencies = {} } = JSON.parse(packageData)
-    externals.push(
-      ...Object.keys(devDependencies),
-      ...Object.keys(dependencies),
-    )
+    Object.keys(devDependencies)
+      .concat(Object.keys(dependencies))
+      .forEach((key) => {
+        externals.add(key)
+      })
   })
 
   const input = await glob(
@@ -75,7 +76,7 @@ async function buildPackagesHandler() {
   const bundle = await rollup({
     input,
     plugins,
-    external: externals,
+    external: Array.from(externals),
     treeshake: { moduleSideEffects: false },
   })
 
