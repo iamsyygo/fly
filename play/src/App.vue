@@ -1,10 +1,10 @@
 <template>
   <div class="play-container">
     <div>test</div>
-    <spark-avatar
-      src="https://github.com/spark-design/spark-design.github.io/blob/main/public/logo.png?raw=true"
+    <fly-avatar
+      src="https://github.com/fly-design/fly-design.github.io/blob/main/public/logo.png?raw=true"
     />
-    <spark-button>test</spark-button>
+    <fly-button>test</fly-button>
     <el-button>test</el-button>
   </div>
 </template>

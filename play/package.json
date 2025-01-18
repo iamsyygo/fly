@@ -1,5 +1,5 @@
 {
-  "name": "@spark/play",
+  "name": "@fly/play",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -7,8 +7,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@spark/internal-constant": "workspace:^",
-    "@spark/internal-utils": "workspace:^",
+    "@fly/internal-constant": "workspace:^",
+    "@fly/internal-utils": "workspace:^",
     "@vitejs/plugin-vue": "^5.2.1",
     "unplugin-vue-components": "^28.0.0",
     "vite": "^6.0.7",

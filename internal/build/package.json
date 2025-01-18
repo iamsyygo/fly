@@ -1,5 +1,5 @@
 {
-  "name": "@spark/internal-build",
+  "name": "@fly/internal-build",
   "version": "0.0.1",
   "scripts": {
     "build": "tsx index.ts",
@@ -15,7 +15,7 @@
     "rollup-plugin-delete": "^2.1.0",
     "rollup-plugin-esbuild": "^6.1.1",
     "tsx": "^4.19.2",
-    "@spark/internal-constant": "workspace:*",
-    "@spark/internal-utils": "workspace:*"
+    "@fly/internal-constant": "workspace:*",
+    "@fly/internal-utils": "workspace:*"
   }
 }

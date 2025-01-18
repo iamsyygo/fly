@@ -1,4 +1,4 @@
-import { withInstall } from '@spark/utils'
+import { withInstall } from '@fly/utils'
 import _Input from './src/Input.vue'
 
 export const SparkInput = withInstall(_Input)

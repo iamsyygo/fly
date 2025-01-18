@@ -1,5 +1,5 @@
-export const pkg = 'spark'
-export const pkgScope = '@spark'
+export const pkg = 'fly'
+export const pkgScope = '@fly'
 export const pkgShorthandName = 'sp'
 
 export const esmDir = 'es'

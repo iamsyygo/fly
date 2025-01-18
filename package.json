@@ -30,7 +30,7 @@
     "@commitlint/cli": "^18.0.0",
     "@commitlint/config-conventional": "^18.0.0",
     "@eslint/eslintrc": "^3.2.0",
-    "@spark/internal-lint": "workspace:^",
+    "@fly/internal-lint": "workspace:^",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.10.5",
     "@vitejs/plugin-vue": "^5.0.0",

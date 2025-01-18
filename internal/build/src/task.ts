@@ -9,8 +9,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import { Plugin, rollup } from 'rollup'
 import del from 'rollup-plugin-delete'
 import esbuild from 'rollup-plugin-esbuild'
-import { packagesPath, rootPath } from '@spark/internal-utils'
-import { target } from '@spark/internal-constant'
+import { packagesPath, rootPath } from '@fly/internal-utils'
+import { target } from '@fly/internal-constant'
 import { buildOptionsAssembly } from './module'
 const plugins: Plugin[] = [
   vue({

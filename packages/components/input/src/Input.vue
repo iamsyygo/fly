@@ -1,11 +1,11 @@
 <template>
-  <div class="spark-input-wrapper">
+  <div class="fly-input-wrapper">
     <input
       :type="type"
       :value="modelValue"
       :placeholder="placeholder"
       :disabled="disabled"
-      class="spark-input"
+      class="fly-input"
       @input="handleInput"
       @focus="handleFocus"
       @blur="handleBlur"

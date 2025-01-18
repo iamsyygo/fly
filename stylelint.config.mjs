@@ -1,3 +1,3 @@
-import sparkStylelint from '@spark/internal-lint/stylelint'
+import sparkStylelint from '@fly/internal-lint/stylelint'
 
 export default sparkStylelint

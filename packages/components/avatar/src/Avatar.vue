@@ -1,15 +1,15 @@
 <template>
   <span
     :class="[
-      'spark-avatar',
-      `spark-avatar--${shape}`,
-      `spark-avatar--${size}`,
-      { 'spark-avatar--image': hasImage },
+      'fly-avatar',
+      `fly-avatar--${shape}`,
+      `fly-avatar--${size}`,
+      { 'fly-avatar--image': hasImage },
     ]"
     :style="avatarStyle"
   >
     <img v-if="src" :src="src" :alt="alt" @error="handleError" />
-    <span v-else-if="$slots.default" class="spark-avatar__text">
+    <span v-else-if="$slots.default" class="fly-avatar__text">
       <slot />
     </span>
   </span>

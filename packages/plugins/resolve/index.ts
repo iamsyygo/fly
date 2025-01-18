@@ -1,5 +1,5 @@
 import { pascalCase } from 'unplugin-vue-components'
-import { esmDir, libDir, pkg, pkgShorthandName } from '@spark/internal-constant'
+import { esmDir, libDir, pkg, pkgShorthandName } from '@fly/internal-constant'
 import type { ComponentResolver } from 'unplugin-vue-components'
 export * from 'unplugin-vue-components'
 

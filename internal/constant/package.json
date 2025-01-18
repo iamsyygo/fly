@@ -1,5 +1,5 @@
 {
-  "name": "@spark/internal-constant",
+  "name": "@fly/internal-constant",
   "version": "0.0.1",
   "scripts": {
     "dev": "unbuild --stub",

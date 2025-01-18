@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
-      '@spark': fileURLToPath(new URL('./packages', import.meta.url)),
+      '@fly': fileURLToPath(new URL('./packages', import.meta.url)),
     },
   },
   test: {

@@ -1,9 +1,9 @@
 <template>
   <button
     :class="[
-      'spark-button',
-      `spark-button--${type}`,
-      { 'spark-button--disabled': disabled },
+      'fly-button',
+      `fly-button--${type}`,
+      { 'fly-button--disabled': disabled },
     ]"
     :disabled="disabled"
     @click="handleClick"

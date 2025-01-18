@@ -39,7 +39,7 @@
     }
   },
   "keywords": [
-    "spark",
+    "fly",
     "component library",
     "ui framework",
     "ui",
@@ -47,7 +47,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iamsyygo/spark.git"
+    "url": "git+https://github.com/iamsyygo/fly.git"
   },
   "publishConfig": {
     "access": "public"

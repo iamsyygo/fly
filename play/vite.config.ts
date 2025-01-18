@@ -6,8 +6,8 @@ import jsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
 // import inspect from 'vite-plugin-inspect'
 import Components, { pascalCase } from 'unplugin-vue-components'
-import { pkg } from '@spark/internal-constant'
-import { componentsPath } from '@spark/internal-utils'
+import { pkg } from '@fly/internal-constant'
+import { componentsPath } from '@fly/internal-utils'
 import type { ComponentResolver } from 'unplugin-vue-components'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -54,7 +54,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: /^spark(\/(es|lib))?$/,
+        find: /^fly(\/(es|lib))?$/,
         replacement: resolve(componentsPath, 'index.ts'),
       },
       // {

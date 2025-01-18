@@ -16,7 +16,7 @@
     "rootDir": ".",
     "types": [],
     "paths": {
-      "@spark/*": ["packages/*"]
+      "@fly/*": ["packages/*"]
     },
     "preserveSymlinks": true
   }

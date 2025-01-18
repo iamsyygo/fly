@@ -1,5 +1,5 @@
 {
-  "name": "@spark/internal-lint",
+  "name": "@fly/internal-lint",
   "version": "0.0.1",
   "scripts": {
     "dev": "unbuild --stub",

@@ -1,4 +1,4 @@
-import { withInstall } from '@spark/utils'
+import { withInstall } from '@fly/utils'
 import _Button from './src/Button.vue'
 
 export const SparkButton = withInstall(_Button)

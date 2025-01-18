@@ -1,6 +1,6 @@
 import { resolve } from 'path'
-import { packagesDistPath, packagesPath } from '@spark/internal-utils'
-import { esmDir, libDir } from '@spark/internal-constant'
+import { packagesDistPath, packagesPath } from '@fly/internal-utils'
+import { esmDir, libDir } from '@fly/internal-constant'
 import type { ModuleFormat, OutputOptions } from 'rollup'
 
 export const buildOptions: Partial<Record<ModuleFormat, OutputOptions>> = {

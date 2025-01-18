@@ -1,5 +1,5 @@
 {
-  "name": "@spark/styles",
+  "name": "@fly/styles",
   "version": "0.1.0",
   "main": "dist/index.css",
   "scripts": {

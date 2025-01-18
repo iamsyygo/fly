@@ -161,7 +161,7 @@ export default [
           pathGroups: [
             { pattern: 'vue', group: 'external', position: 'before' },
             { pattern: '@vue/**', group: 'external', position: 'before' },
-            { pattern: '@spark/**', group: 'internal' },
+            { pattern: '@fly/**', group: 'internal' },
           ],
           pathGroupsExcludedImportTypes: ['type'],
         },
