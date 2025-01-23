@@ -13,6 +13,11 @@ import type { ComponentResolver } from 'unplugin-vue-components'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
+/**
+ * import { FlyButton as __unplugin_components_1 } from "/@fs/D:/web-design/Repositories/fly/packages/components/index.ts";
+ * 如果是本地路径的 import，vite 会在前缀添加 `/@fs/`，特殊处理
+ */
+
 const resolver: ComponentResolver = {
   resolve: async (name) => {
     if (!name.startsWith(pascalCase(pkg))) return
@@ -64,7 +69,7 @@ export default defineConfig({
     ],
   },
   server: {
-    // port: 3000,
+    port: 3080,
     host: true,
   },
   build: {
@@ -80,7 +85,6 @@ export default defineConfig({
     }),
     // inspect(),
   ],
-
   optimizeDeps: {
     include: ['vue', '@vue/shared'],
   },

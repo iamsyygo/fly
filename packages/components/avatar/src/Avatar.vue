@@ -26,7 +26,7 @@ export interface AvatarProps {
 }
 
 export default defineComponent({
-  name: 'SparkAvatar',
+  name: 'FlyAvatar',
 
   props: {
     size: {

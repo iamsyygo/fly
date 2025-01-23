@@ -1,4 +1,4 @@
-import sparkEslint from '@fly/internal-lint/eslint'
+import flyEslint from '@fly/internal-lint/eslint'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default sparkEslint
+export default flyEslint
